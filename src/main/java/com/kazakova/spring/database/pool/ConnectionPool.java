@@ -1,9 +1,11 @@
 package com.kazakova.spring.database.pool;
 
+import org.springframework.beans.factory.InitializingBean;
+
 import java.util.List;
 import java.util.Map;
 
-public class ConnectionPool {
+public class ConnectionPool implements InitializingBean {
 
     private final String username;
     private final Integer poolSize;
@@ -22,5 +24,18 @@ public class ConnectionPool {
 
     public void setProperties(Map<String, Object> properties) {
         this.properties = properties;
+    }
+
+    public void init() {
+        System.out.println("Init connection pool");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Properties set");
+    }
+
+    public void destroy() {
+        System.out.println("Clean connection pool");
     }
 }
