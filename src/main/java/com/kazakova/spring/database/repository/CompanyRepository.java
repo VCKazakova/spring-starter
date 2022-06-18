@@ -1,16 +1,13 @@
 package com.kazakova.spring.database.repository;
 
+import com.kazakova.spring.bpp.InjectBean;
 import com.kazakova.spring.database.pool.ConnectionPool;
 
 public class CompanyRepository {
 
+    @InjectBean
     private final ConnectionPool connectionPool;
 
-    public CompanyRepository(ConnectionPool connectionPool) {
-        this.connectionPool = connectionPool;
-    }
 
-    public static CompanyRepository of(ConnectionPool connectionPool) {
-        return new CompanyRepository(connectionPool);
-    }
+
 }
