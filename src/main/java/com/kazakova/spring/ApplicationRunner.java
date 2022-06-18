@@ -19,6 +19,10 @@ public class ApplicationRunner {
         System.out.println(Serializable.class.isAssignableFrom(value.getClass()));
 
         try (var context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class)) {
+            // задаем профили (не использовать такой способ)
+//            context.register(ApplicationConfiguration.class);
+//            context.getEnvironment().setActiveProfiles("prod", "web");
+//            context.refresh();
             //      clazz -> String -> Map<String, Object>
 //            var connectionPool = context.getBean("p1", ConnectionPool.class);
 //            System.out.println(connectionPool);
