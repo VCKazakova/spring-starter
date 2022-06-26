@@ -4,6 +4,7 @@ import com.kazakova.spring.bpp.Auditing;
 import com.kazakova.spring.bpp.Transaction;
 import com.kazakova.spring.database.entity.Company;
 import com.kazakova.spring.database.pool.ConnectionPool;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
@@ -16,21 +17,14 @@ import java.util.Optional;
 @Transaction
 @Auditing
 @Repository
+@RequiredArgsConstructor
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     private final ConnectionPool pool1;
     private final List<ConnectionPool> pools;
+    @Value("${db.pool.size}")
     private final Integer poolSize;
-
-    public CompanyRepository(ConnectionPool pool1,
-                             List<ConnectionPool> pools,
-                             @Value("${db.pool.size}") Integer poolSize) {
-        this.pool1 = pool1;
-        this.pools = pools;
-        this.poolSize = poolSize;
-    }
-
 
     @PostConstruct
     public void init() {
