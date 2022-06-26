@@ -3,6 +3,7 @@ package com.kazakova.spring;
 import com.kazakova.spring.config.ApplicationConfiguration;
 import com.kazakova.spring.database.pool.ConnectionPool;
 import com.kazakova.spring.database.repository.CompanyRepository;
+import com.kazakova.spring.service.CompanyService;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -27,8 +28,8 @@ public class ApplicationRunner {
 //            var connectionPool = context.getBean("p1", ConnectionPool.class);
 //            System.out.println(connectionPool);
 
-            var companyRepository = context.getBean("companyRepository", CompanyRepository.class);
-            System.out.println(companyRepository);
+            var companyService = context.getBean("companyService", CompanyService.class);
+            System.out.println(companyService.findById(1));
         }
     }
 }
