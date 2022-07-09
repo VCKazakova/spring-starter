@@ -1,5 +1,6 @@
 package com.kazakova.spring.integration.annotation;
 
+import com.kazakova.spring.integration.TestApplicationRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -11,7 +12,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @ActiveProfiles("test")
-@SpringBootTest
+@SpringBootTest(classes = TestApplicationRunner.class) // указываем тестовую конфигурацию
 public @interface IT {
 
 
