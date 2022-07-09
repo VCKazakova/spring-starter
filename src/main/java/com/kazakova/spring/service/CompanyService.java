@@ -23,7 +23,7 @@ public class CompanyService {
         return crudRepository.findById(id)
                 .map(entity -> {
                     publisher.publishEvent(new EntityEvent(entity, AccessType.READ));
-                    return new CompanyReadDto(entity.id());
+                    return new CompanyReadDto(entity.getId());
                 });
     }
 
