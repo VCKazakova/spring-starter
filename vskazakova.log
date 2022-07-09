@@ -1,0 +1,6 @@
+2022-07-09 13:17:06.540  INFO 9635 --- [main] c.k.spring.database.pool.ConnectionPool  : Init connection pool
+2022-07-09 13:17:06.579  INFO 9635 --- [main] c.k.spring.database.pool.ConnectionPool  : Init connection pool
+2022-07-09 13:17:06.582  INFO 9635 --- [main] c.k.spring.database.pool.ConnectionPool  : Init connection pool
+2022-07-09 13:17:06.764  INFO 9635 --- [SpringApplicationShutdownHook] c.k.spring.database.pool.ConnectionPool  : Clean connection pool
+2022-07-09 13:17:06.765  INFO 9635 --- [SpringApplicationShutdownHook] c.k.spring.database.pool.ConnectionPool  : Clean connection pool
+2022-07-09 13:17:06.765  INFO 9635 --- [SpringApplicationShutdownHook] c.k.spring.database.pool.ConnectionPool  : Clean connection pool

@@ -17,3 +17,10 @@ db:
     - size: 5
       timeout: 10
 #spring.profiles.active=qa
+logging:
+  level:
+    root: WARN
+    com.kazakova.spring.database.pool.ConnectionPool: INFO
+  file:
+    name: vskazakova.log
+    path: /
